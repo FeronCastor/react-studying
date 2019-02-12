@@ -31,14 +31,14 @@ class SliderV1 extends Component {
     return (
       <div className="slider-v1">
         <div>
-            <button data-direction ="prev" onClick={this.nextSlideHandler.bind(this)}>PREV</button>
+            <button data-direction ="prev" onClick={this.nextSlideHandler}>PREV</button>
         </div>
         <div>
             {/*<img src="" alt=""/>*/}
             { this.state.currentImageIndex }
         </div>
         <div>
-            <button data-deriction ="next" onClick={this.nextSlideHandler.bind(this)}>NEXT</button>
+            <button data-deriction ="next" onClick={this.nextSlideHandler}>NEXT</button>
         </div>
         </div>
     );
