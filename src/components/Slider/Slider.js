@@ -18,6 +18,7 @@ class Slider extends Component {
 
   nextSlideHandler(e) {
     let newIndex =  this.state.currentImageIndex;
+    console.log(e.currentTarget.dataset);
     if (e.currentTarget.dataset.direction === 'next') {
         newIndex = this.state.currentImageIndex + 1;
     } else {
@@ -38,7 +39,7 @@ class Slider extends Component {
             { this.state.currentImageIndex }
         </div>
         <div>
-            <button data-deriction ="next" onClick={this.nextSlideHandler}>NEXT</button>
+            <button data-direction ="next" onClick={this.nextSlideHandler}>NEXT</button>
         </div>
         </div>
     );
