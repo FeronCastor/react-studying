@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Slider from './Slider'
+import Slider from './components/Slider/Slider'
 
 class App extends Component {
   render() {
