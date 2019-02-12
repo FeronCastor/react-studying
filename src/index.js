@@ -2,11 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import SliderV1 from './SliderV1'
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-<SliderV1 />,
 <App />,
  document.getElementById('root'));
 
