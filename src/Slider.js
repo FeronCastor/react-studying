@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './SliderV1.css';
+import './Slider.css';
 
 
-class SliderV1 extends Component {
+class Slider extends Component {
 
   constructor() {
     super();
@@ -45,4 +45,4 @@ class SliderV1 extends Component {
   }
 }
 
-export default SliderV1;
+export default Slider;
