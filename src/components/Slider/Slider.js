@@ -6,6 +6,9 @@ import lamborg from './picture/lamborg.jpg';
 import mers from './picture/mers.jpg';
 import porshe from './picture/porshe.jpg';
 
+function modulo(a, b) {
+  return (a % b + b) % b;
+ }
 
 class Slider extends Component {
 
@@ -26,12 +29,10 @@ class Slider extends Component {
 
 
     if (e.currentTarget.dataset.direction === 'next') {
-      if (newIndex < this.props.images.length - 1) {
-        newIndex = this.state.currentImageIndex + 1;
-      }
-    } else if (newIndex > 0) {
-        newIndex = this.state.currentImageIndex - 1;
-    }
+      newIndex = modulo(this.state.currentImageIndex + 1, this.props.images.length);
+  } else {
+      newIndex = modulo(this.state.currentImageIndex - 1, this.props.images.length);
+  }
 
     this.setState({currentImageIndex: newIndex });
   }

@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Slider from './components/Slider/Slider'
-import bmw from './picture/bmw.jpg';
-import ferrari from './picture/ferrari.jpg';
-import lamborg from './picture/lamborg.jpg';
-import mers from './picture/mers.jpg';
-import porshe from './picture/porshe.jpg';
+import bmw from './components/Slider/picture/bmw.jpg';
+import ferrari from './components/Slider/picture/ferrari.jpg';
+import lamborg from './components/Slider/picture/lamborg.jpg';
+import mers from './components/Slider/picture/mers.jpg';
+import porshe from './components/Slider/picture/porshe.jpg';
 
 const images = [bmw,ferrari,lamborg,mers,porshe];
 
