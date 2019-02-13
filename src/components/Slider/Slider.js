@@ -26,7 +26,7 @@ class Slider extends Component {
 
 
     if (e.currentTarget.dataset.direction === 'next') {
-      if (newIndex < this.state.images.length - 1) {
+      if (newIndex < this.props.images.length - 1) {
         newIndex = this.state.currentImageIndex + 1;
       }
     } else if (newIndex > 0) {
@@ -43,7 +43,7 @@ class Slider extends Component {
             <button data-direction ='prev' onClick={this.nextSlideHandler}>PREV</button>
         </div>
         <div className='slide'>
-          <img src={this.state.images[this.state.currentImageIndex]} alt=''/>
+          <img src={this.props.images[this.state.currentImageIndex]} alt=''/>
             { this.state.currentImageIndex }
         </div>
         <div>
