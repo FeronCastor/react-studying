@@ -1,3 +1,13 @@
+.slider-v1 {
+    display: flex;
+    margin-left: 30%;
+}
+
 .slider-v1 img {
     height: 300px;
+    border-radius: 10px;
+}
+
+.prev {
+    margin-top: 140px;
 }

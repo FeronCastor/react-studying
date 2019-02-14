@@ -41,7 +41,7 @@ class Slider extends Component {
     return (
       <div className='slider-v1'>
         <div>
-            <button data-direction ='prev' onClick={this.nextSlideHandler}>PREV</button>
+            <button class='prev' data-direction ='prev' onClick={this.nextSlideHandler}>PREV</button>
         </div>
         <div className='slide'>
           <img src={this.props.images[this.state.currentImageIndex]} alt=''/>
@@ -50,7 +50,7 @@ class Slider extends Component {
         <div>
             <button data-direction ='next' onClick={this.nextSlideHandler}>NEXT</button>
         </div>
-        </div>
+      </div>
     );
   }
 }

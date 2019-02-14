@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Calculator from './components/Calculator/Calculator'
 import Slider from './components/Slider/Slider'
 import bmw from './components/Slider/picture/bmw.jpg';
 import ferrari from './components/Slider/picture/ferrari.jpg';
@@ -14,24 +14,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
         
-        <Slider 
-          images={images}
-        />
+        <Slider images={images}/>
+        <Calculator />
       </div>
     );
   }
