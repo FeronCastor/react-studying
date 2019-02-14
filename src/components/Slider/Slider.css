@@ -1,9 +1,9 @@
-.slider-v1 {
+.slider {
     display: flex;
     margin-left: 30%;
 }
 
-.slider-v1 img {
+.slider img {
     height: 300px;
     border-radius: 10px;
 }
