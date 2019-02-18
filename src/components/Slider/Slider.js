@@ -12,7 +12,6 @@ class Slider extends Component {
 
     this.state = {
         currentImageIndex: 0,
-        isCycleMode: false
     };
 
     this.nextSlideHandler = this.nextSlideHandler.bind(this);
@@ -39,8 +38,8 @@ class Slider extends Component {
             { this.state.currentImageIndex }
         </div>
         <div>
-            <button class='prev' data-direction ='prev' onClick={this.nextSlideHandler}>⟨</button>
-            <button class='next' data-direction ='next' onClick={this.nextSlideHandler}>⟩</button>
+            <button className='prev' data-direction ='prev' onClick={this.nextSlideHandler}>⟨</button>
+            <button className='next' data-direction ='next' onClick={this.nextSlideHandler}>⟩</button>
         </div>
       </div>
     );
