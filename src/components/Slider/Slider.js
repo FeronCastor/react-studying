@@ -34,15 +34,13 @@ class Slider extends Component {
   render() {
     return (
       <div className='slider'>
-        <div>
-            <button class='prev' data-direction ='prev' onClick={this.nextSlideHandler}>PREV</button>
-        </div>
         <div className='slide'>
           <img src={this.props.images[this.state.currentImageIndex]} alt=''/>
             { this.state.currentImageIndex }
         </div>
         <div>
-            <button data-direction ='next' onClick={this.nextSlideHandler}>NEXT</button>
+            <button class='prev' data-direction ='prev' onClick={this.nextSlideHandler}>⟨</button>
+            <button class='next' data-direction ='next' onClick={this.nextSlideHandler}>⟩</button>
         </div>
       </div>
     );
