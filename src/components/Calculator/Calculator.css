@@ -1,3 +1,11 @@
 .calculator {
+  width: 150px;
+  margin: 0 auto;
   margin-top: 100px;
+  text-align: center;
+  color: rgb(120, 120, 236);
+}
+
+.calculator div {
+  margin-top: 10px;
 }

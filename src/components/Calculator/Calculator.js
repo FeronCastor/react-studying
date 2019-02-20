@@ -10,30 +10,37 @@ class Calculator extends Component {
     super();
 
     this.state = {
-        
+        result: 0,
+        number1: 10,
+        number2: 7
     };
 
+    this.showResult = this.showResult.bind(this);
+    this.handleNumber1Change = this.handleNumber1Change.bind(this);
+    this.handleNumber2Change = this.handleNumber2Change.bind(this);
 
 };
 
-
+showResult() {
+  this.setState({result: this.state.number1 + this.state.number2});
+}
 
   render() {
     return (
       <div className="calculator">
-        <input />
+        <input value={this.state.number1}/>
 
         <select name='' id=''>
           <option value='+'>+</option>
           <option value='-'>-</option>
         </select>
 
-        <input />
+        <input value={this.state.number2}/>
 
-        <button>Get result</button>
+        <button onClick={this.showResult}>=</button>
 
         <div>
-          Result: <span>0</span>
+          Result: <span>{this.state.result}</span>
         </div>
       </div>
     );
