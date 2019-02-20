@@ -10,66 +10,36 @@ class Calculator extends Component {
     super();
 
     this.state = {
-        result: 0,
-        number1: 10,
-        number2: 7,
-        operation: '+'
+
     };
 
-    this.showResult = this.showResult.bind(this);
-    this.handleNumber1Change = this.handleNumber1Change.bind(this);
-    this.handleNumber2Change = this.handleNumber2Change.bind(this);
-    this.handleOperationChange = this.handleOperationChange.bind(this);
 
-};
-
-showResult() {
-  let result = 0;
-
-  switch (this.state.operation) {
-
-    case '+':
-      result = this.state.number1 + this.state.number2;
-      break;
-    case '-':
-      result = this.state.number1 - this.state.number2;
-      break;
-    default:
-      break;
-  }
-
-  this.setState({result:result})
-
-}
-
-handleNumber1Change(e) {
-  this.setState({number1: Number(e.currentTarget.value)});
-}
-
-handleNumber2Change(e) {
-  this.setState({number2: Number(e.currentTarget.value)});
-}
-
-handleOperationChange(e) {
-  this.setState({operation: e.currentTarget.value});
 }
 
   render() {
     return (
-      <div className="calculator">
-        <input value={this.state.number1} onChange={this.handleNumber1Change}/>
+      <div className='calc'>
+        <div className='calc_display'>
+          <input type='text' name='' className='calc_display-input'/>
+        </div>
+        <div className='calc_buttons'>
+          <table className='calc_table'>
+            <tr className='calc_buttons-row'>
+              <td>
+                <button type='button' className='btn'>CE</button>
+              </td>
+              <td>
+                <button type='button' className='btn'>С</button>
+              </td>
+              <td>
+                <button type='button' className='btn'>/</button>
+              </td>
+              <td>
+                <button type='button' className='btn'>*</button>
+              </td>
+            </tr>
+          </table>
 
-        <select name='' id='' onChange={this.handleOperationChange}>
-          <option value='+'>+</option>
-          <option value='-'>-</option>
-        </select>
-
-        <input value={this.state.number2} onChange={this.handleNumber2Change}/>
-
-        <button onClick={this.showResult}>=</button>
-
-        <div>
-          Result: <span>{this.state.result}</span>
         </div>
       </div>
     );
