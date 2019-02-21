@@ -1,6 +1,6 @@
 .calc {
   width: 400px;
-  height: 600px;
+  height: 500px;
   margin-left: 500px;
   margin-bottom: 100px;
   border: 1px solid black;
@@ -26,20 +26,23 @@
 
 }
 
-.calc_table {
+.calc_buttons-row {
+
+}
+
+.calc_buttons {
   margin-top: 40px;
   margin-left: 20px;
-
 }
 
 .btn {
   width: 70px;
-  height: 30px;
+  height: 40px;
   margin-right: 20px;
   border: 1px solid grey;
   border-radius: 5px;
-  display: inline-block;
   text-align: center;
+  margin-bottom: 15px;
   
 }
 

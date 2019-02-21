@@ -6,8 +6,8 @@ import './Calculator.css';
 
 class Calculator extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
 
@@ -36,6 +36,56 @@ class Calculator extends Component {
               </td>
               <td>
                 <button type='button' className='btn'>*</button>
+              </td>
+            </tr>
+            <tr className='calc_buttons-row'>
+              <td>
+                <button type='button' className='btn'>7</button>
+              </td>
+              <td>
+                <button type='button' className='btn'>8</button>
+              </td>
+              <td>
+                <button type='button' className='btn'>9</button>
+              </td>
+              <td>
+                <button type='button' className='btn'>-</button>
+              </td>
+            </tr>
+            <tr className='calc_buttons-row'>
+              <td>
+                <button type='button' className='btn'>4</button>
+              </td>
+              <td>
+                <button type='button' className='btn'>5</button>
+              </td>
+              <td>
+                <button type='button' className='btn'>6</button>
+              </td>
+              <td>
+                <button type='button' className='btn'>+</button>
+              </td>
+            </tr>
+            <tr className='calc_buttons-row'>
+              <td>
+                <button type='button' className='btn'>1</button>
+              </td>
+              <td>
+                <button type='button' className='btn'>2</button>
+              </td>
+              <td>
+                <button type='button' className='btn'>3</button>
+              </td>
+            </tr>
+            <tr className='calc_buttons-row'>
+              <td>
+                <button type='button' className='btn'>0</button>
+              </td>
+              <td>
+                <button type='button' className='btn'>.</button>
+              </td>
+              <td>
+                <button type='button' className='btn'>=</button>
               </td>
             </tr>
           </table>
