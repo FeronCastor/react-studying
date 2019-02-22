@@ -10,7 +10,7 @@ class Calculator extends Component {
     super(props);
 
     this.state = {
-
+      expression: ' ',
     };
 
 
@@ -32,60 +32,60 @@ class Calculator extends Component {
                 <button type='button' className='btn'>С</button>
               </td>
               <td>
-                <button type='button' className='btn'>/</button>
+                <button type='button' className='btn' data-token ='/' onClick={this.props.expression}>/</button>
               </td>
               <td>
-                <button type='button' className='btn'>*</button>
-              </td>
-            </tr>
-            <tr className='calc_buttons-row'>
-              <td>
-                <button type='button' className='btn'>7</button>
-              </td>
-              <td>
-                <button type='button' className='btn'>8</button>
-              </td>
-              <td>
-                <button type='button' className='btn'>9</button>
-              </td>
-              <td>
-                <button type='button' className='btn'>-</button>
+                <button type='button' className='btn' data-token ='*' onClick={this.props.expression}>*</button>
               </td>
             </tr>
             <tr className='calc_buttons-row'>
               <td>
-                <button type='button' className='btn'>4</button>
+                <button type='button' className='btn' data-token ='7' onClick={this.props.expression}>7</button>
               </td>
               <td>
-                <button type='button' className='btn'>5</button>
+                <button type='button' className='btn' data-token ='8' onClick={this.props.expression}>8</button>
               </td>
               <td>
-                <button type='button' className='btn'>6</button>
+                <button type='button' className='btn' data-token ='9' onClick={this.props.expression}>9</button>
               </td>
               <td>
-                <button type='button' className='btn'>+</button>
-              </td>
-            </tr>
-            <tr className='calc_buttons-row'>
-              <td>
-                <button type='button' className='btn'>1</button>
-              </td>
-              <td>
-                <button type='button' className='btn'>2</button>
-              </td>
-              <td>
-                <button type='button' className='btn'>3</button>
+                <button type='button' className='btn' data-token ='-' onClick={this.props.expression}>-</button>
               </td>
             </tr>
             <tr className='calc_buttons-row'>
               <td>
-                <button type='button' className='btn'>0</button>
+                <button type='button' className='btn' data-token ='4' onClick={this.props.expression}>4</button>
               </td>
               <td>
-                <button type='button' className='btn'>.</button>
+                <button type='button' className='btn' data-token ='5' onClick={this.props.expression}>5</button>
               </td>
               <td>
-                <button type='button' className='btn'>=</button>
+                <button type='button' className='btn' data-token ='6' onClick={this.props.expression}>6</button>
+              </td>
+              <td>
+                <button type='button' className='btn' data-token ='+' onClick={this.props.expression}>+</button>
+              </td>
+            </tr>
+            <tr className='calc_buttons-row'>
+              <td>
+                <button type='button' className='btn' data-token ='1' onClick={this.props.expression}>1</button>
+              </td>
+              <td>
+                <button type='button' className='btn' data-token ='2' onClick={this.props.expression}>2</button>
+              </td>
+              <td>
+                <button type='button' className='btn' data-token ='3' onClick={this.props.expression}>3</button>
+              </td>
+            </tr>
+            <tr className='calc_buttons-row'>
+              <td>
+                <button type='button' className='btn' data-token ='0' onClick={this.props.expression}>0</button>
+              </td>
+              <td>
+                <button type='button' className='btn' data-token ='.' onClick={this.props.expression}>.</button>
+              </td>
+              <td>
+                <button type='button' className='btn' data-token ='=' onClick={this.props.expression}>=</button>
               </td>
             </tr>
           </table>
