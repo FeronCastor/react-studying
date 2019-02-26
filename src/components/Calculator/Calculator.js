@@ -13,6 +13,8 @@ class Calculator extends Component {
     };
 
 this.handleClick = this.handleClick.bind(this);
+this.resetInput = this.resetInput.bind(this);
+this.delSimbol = this.delSimbol.bind(this);
 }
 
 handleClick(e) {
@@ -21,21 +23,34 @@ handleClick(e) {
 });
 };
 
+resetInput() {
+  this.setState({
+    expression: ''
+  });
+};
+
+
+delSimbol() {
+  this.setState({
+    expression: this.state.expression.slice (0, -1)
+  });
+};
+
   render() {
     return (
       <div className='calc'>
         <div className='calc_display'>
-          <input value={this.state.expression} type='text' name='' className='calc_display-input'/>
+          <input defaultValue={this.state.expression} type='text' name='' className='calc_display-input' />
         </div>
         <div className='calc_buttons'>
           <table className='calc_table'>
             <tbody>
             <tr className='calc_buttons-row'>
               <td>
-                <button type='button' className='btn'>CE</button>
+                <button type='button' className='btn' onClick={this.resetInput}>CE</button>
               </td>
               <td>
-                <button type='button' className='btn'>С</button>
+                <button type='button' className='btn' onClick={this.delSimbol}>С</button>
               </td>
               <td>
                 <button type='button' className='btn' data-token ='/' onClick={this.handleClick}>/</button>
