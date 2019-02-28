@@ -15,6 +15,7 @@ class Calculator extends Component {
 this.handleClick = this.handleClick.bind(this);
 this.resetInput = this.resetInput.bind(this);
 this.delSimbol = this.delSimbol.bind(this);
+this.findSum = this.findSum.bind(this);
 }
 
 handleClick(e) {
@@ -36,11 +37,16 @@ delSimbol() {
   });
 };
 
+findSum() {
+  this.setState({
+     expression: eval(this.state.expression).toString()
+  });
+};
   render() {
     return (
       <div className='calc'>
         <div className='calc_display'>
-          <input defaultValue={this.state.expression} type='text' name='' className='calc_display-input' />
+          <input readOnly value={this.state.expression} type='text' name='' className='calc_display-input' />
         </div>
         <div className='calc_buttons'>
           <table className='calc_table'>
@@ -106,7 +112,7 @@ delSimbol() {
                 <button type='button' className='btn' data-token ='.' onClick={this.handleClick}>.</button>
               </td>
               <td>
-                <button type='button' className='btn' data-token ='=' onClick={this.handleClick}>=</button>
+                <button type='button' className='btn' data-token ='=' onClick={this.findSum}>=</button>
               </td>
             </tr>
             </tbody>
