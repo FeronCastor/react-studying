@@ -10,7 +10,7 @@ class Calculator extends Component {
 
     this.state = {
       expression: ''
-    };
+    }
 
 this.handleClick = this.handleClick.bind(this);
 this.resetInput = this.resetInput.bind(this);
@@ -21,27 +21,41 @@ this.findSum = this.findSum.bind(this);
 handleClick(e) {
   this.setState({
     expression: this.state.expression + e.currentTarget.dataset.token
-});
-};
+})
+}
 
 resetInput() {
   this.setState({
     expression: ''
-  });
-};
+  })
+}
 
 
 delSimbol() {
   this.setState({
     expression: this.state.expression.slice (0, -1)
-  });
-};
+  })
+}
 
 findSum() {
   this.setState({
-     expression: eval(this.state.expression).toString()
-  });
-};
+    // eslint-disable-next-line
+     expression: eval(this.state.expression).toString() 
+  })
+}
+
+isExpressionValid() {
+  if (!this.state.expression) {
+    return false;
+}   
+    // eslint-disable-next-line
+    try { eval(this.state.expression); 
+      return true; } 
+    catch (err) { 
+      return false;
+    } 
+}
+
   render() {
     return (
       <div className='calc'>
@@ -112,7 +126,7 @@ findSum() {
                 <button type='button' className='btn' data-token ='.' onClick={this.handleClick}>.</button>
               </td>
               <td>
-                <button type='button' className='btn' data-token ='=' onClick={this.findSum}>=</button>
+                <button type='button' className='btn' data-token ='=' disabled={!this.isExpressionValid()} onClick={this.findSum}>=</button>
               </td>
             </tr>
             </tbody>
