@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Slider from './components/Slider/Slider'
+import Calculator from './components/Calculator/Calculator'
 import bmw from './pictures/bmw.jpg';
 import ferrari from './pictures/ferrari.jpg';
 import lamborg from './pictures/lamborg.jpg';
@@ -15,7 +16,7 @@ class App extends Component {
       <div className="App">
 
         <Slider images={images}/>
-        
+        <Calculator />
       </div>
     );
   }

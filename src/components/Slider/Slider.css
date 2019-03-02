@@ -3,6 +3,10 @@
     border-radius: 10px;
 }
 
+.slider {
+    margin-bottom: 100px;
+}
+
 .prev {
     width: 80px;
     height: 50px;
