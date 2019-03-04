@@ -1,6 +1,3 @@
 {
-	"extends": "trigen",
-	"env": {
-		"browser": true
-	}
-}
+	"extends": "standard"
+ }
