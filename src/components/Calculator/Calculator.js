@@ -17,10 +17,14 @@ class Calculator extends Component {
 	}
 
 	handleClick(e) {
+		const {
+			token
+		} = e.currentTarget.dataset;
+
 		this.setState(({
 			expression
 		}) => ({
-			expression: expression + e.currentTarget.dataset.token
+			expression: expression + token
 		}));
 	}
 
