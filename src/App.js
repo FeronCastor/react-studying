@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import Slider from './components/Slider/Slider';
 import Calculator from './components/Calculator/Calculator';
@@ -10,14 +10,13 @@ import porshe from './pictures/porshe.jpg';
 
 const images = [bmw, ferrari, lamborg, mers, porshe];
 
-class App extends Component {
-	render() {
-		return (
-			<div className='App'>
-				<Slider images={images}/>
-				<Calculator/>
-			</div>);
-	}
+function App() {
+	return (
+		<div className='App'>
+			<Slider images={images}/>
+			<Calculator/>
+		</div>
+	);
 }
 
 export default App;

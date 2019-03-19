@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './Slider.css';
 
 function modulo(a, b) {
@@ -6,6 +7,10 @@ function modulo(a, b) {
 }
 
 class Slider extends Component {
+
+	static propTypes = {
+		images: PropTypes.arrayOf(PropTypes.string).isRequired
+	};
 
 	constructor() {
 		super();
@@ -18,23 +23,36 @@ class Slider extends Component {
 	}
 
 	nextSlideHandler(e) {
-		let newIndex = this.state.currentImageIndex;
+		const {
+			images
+		} = this.props;
+		const {
+			direction
+		} = e.currentTarget.dataset;
+		const imagesCount = images.length;
 
-		if (e.currentTarget.dataset.direction === 'next') {
-			newIndex = modulo(this.state.currentImageIndex + 1, this.props.images.length);
-		} else {
-			newIndex = modulo(this.state.currentImageIndex - 1, this.props.images.length);
-		}
-
-		this.setState({ currentImageIndex: newIndex });
+		this.setState(({
+			currentImageIndex
+		}) => ({
+			currentImageIndex: direction === 'next'
+				? modulo(currentImageIndex + 1, imagesCount)
+				: modulo(currentImageIndex - 1, imagesCount)
+		}));
 	}
 
 	render() {
+		const {
+			images
+		} = this.props;
+		const {
+			currentImageIndex
+		} = this.state;
+		const currentImage = images[currentImageIndex];
+
 		return (
 			<div className='slider'>
 				<div className='slide'>
-					<img src={this.props.images[this.state.currentImageIndex]} alt=''/>
-					{ this.state.currentImageIndex }
+					<img src={currentImage} alt=''/>
 				</div>
 				<div>
 					<button className='prev' data-direction='prev' onClick={this.nextSlideHandler}>⟨</button>

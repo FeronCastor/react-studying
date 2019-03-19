@@ -17,9 +17,15 @@ class Calculator extends Component {
 	}
 
 	handleClick(e) {
-		this.setState({
-			expression: this.state.expression + e.currentTarget.dataset.token
-		});
+		const {
+			token
+		} = e.currentTarget.dataset;
+
+		this.setState(({
+			expression
+		}) => ({
+			expression: expression + token
+		}));
 	}
 
 	resetInput() {
@@ -29,9 +35,11 @@ class Calculator extends Component {
 	}
 
 	delSimbol() {
-		this.setState({
-			expression: this.state.expression.slice(0, -1)
-		});
+		this.setState(({
+			expression
+		}) => ({
+			expression: expression.slice(0, -1)
+		}));
 	}
 
 	findSum() {
@@ -42,11 +50,17 @@ class Calculator extends Component {
 	}
 
 	isExpressionValid() {
-		if (!this.state.expression) {
+		const {
+			expression
+		} = this.state;
+
+		if (!expression) {
 			return false;
 		}
-		// eslint-disable-next-line
-    try { eval(this.state.expression); 
+
+		try {
+			// eslint-disable-next-line
+			eval(expression); 
 			return true;
 		} catch (err) {
 			return false;
@@ -54,12 +68,18 @@ class Calculator extends Component {
 	}
 
 	render() {
+		const {
+			expression
+		} = this.state;
+
 		return (
 			<div className='calc'>
 				<div className='calc_display'>
 					<input
-						readOnly value={this.state.expression} type='text'
-						name='' className='calc_display-input'
+						className='calc_display-input'
+						type='text'
+						value={expression}
+						readOnly
 					/>
 				</div>
 				<div className='calc_buttons'>
