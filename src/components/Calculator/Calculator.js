@@ -45,7 +45,7 @@ class Calculator extends Component {
 	findSum() {
 		this.setState({
 			// eslint-disable-next-line
-     expression: eval(this.state.expression).toString() 
+		expression: eval(this.state.expression).toString() 
 		});
 	}
 
@@ -87,10 +87,18 @@ class Calculator extends Component {
 						<tbody>
 							<tr className='calc_buttons-row'>
 								<td>
-									<button type='button' className='btn' onClick={this.resetInput}>CE</button>
+									<button
+										type='button' className='btn'
+										onClick={this.resetInput}
+									>CE
+									</button>
 								</td>
 								<td>
-									<button type='button' className='btn' onClick={this.delSimbol}>С</button>
+									<button
+										type='button' className='btn'
+										onClick={this.delSimbol}
+									>С
+									</button>
 								</td>
 								<td>
 									<button
