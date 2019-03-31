@@ -111,7 +111,8 @@ class Calculator extends Component {
 									<button
 										type='button' className='btn' data-token='*'
 										onClick={this.handleClick}
-									>*
+									>
+										*
 									</button>
 								</td>
 							</tr>
@@ -120,28 +121,32 @@ class Calculator extends Component {
 									<button
 										type='button' className='btn' data-token='7'
 										onClick={this.handleClick}
-									>7
+									>
+										7
 									</button>
 								</td>
 								<td>
 									<button
 										type='button' className='btn' data-token='8'
 										onClick={this.handleClick}
-									>8
+									>
+										8
 									</button>
 								</td>
 								<td>
 									<button
 										type='button' className='btn' data-token='9'
 										onClick={this.handleClick}
-									>9
+									>
+										9
 									</button>
 								</td>
 								<td>
 									<button
 										type='button' className='btn' data-token='-'
 										onClick={this.handleClick}
-									>-
+									>
+										-
 									</button>
 								</td>
 							</tr>
@@ -150,28 +155,32 @@ class Calculator extends Component {
 									<button
 										type='button' className='btn' data-token='4'
 										onClick={this.handleClick}
-									>4
+									>
+										4
 									</button>
 								</td>
 								<td>
 									<button
 										type='button' className='btn' data-token='5'
 										onClick={this.handleClick}
-									>5
+									>
+										5
 									</button>
 								</td>
 								<td>
 									<button
 										type='button' className='btn' data-token='6'
 										onClick={this.handleClick}
-									>6
+									>
+										6
 									</button>
 								</td>
 								<td>
 									<button
 										type='button' className='btn' data-token='+'
 										onClick={this.handleClick}
-									>+
+									>
+										+
 									</button>
 								</td>
 							</tr>
@@ -180,21 +189,24 @@ class Calculator extends Component {
 									<button
 										type='button' className='btn' data-token='1'
 										onClick={this.handleClick}
-									>1
+									>
+										1
 									</button>
 								</td>
 								<td>
 									<button
 										type='button' className='btn' data-token='2'
 										onClick={this.handleClick}
-									>2
+									>
+										2
 									</button>
 								</td>
 								<td>
 									<button
 										type='button' className='btn' data-token='3'
 										onClick={this.handleClick}
-									>3
+									>
+										3
 									</button>
 								</td>
 							</tr>
@@ -203,21 +215,24 @@ class Calculator extends Component {
 									<button
 										type='button' className='btn' data-token='0'
 										onClick={this.handleClick}
-									>0
+									>
+										0
 									</button>
 								</td>
 								<td>
 									<button
 										type='button' className='btn' data-token='.'
 										onClick={this.handleClick}
-									>.
+									>
+										.
 									</button>
 								</td>
 								<td>
 									<button
 										type='button' className='btn' data-token='='
 										disabled={!this.isExpressionValid()} onClick={this.findSum}
-									>=
+									>
+										=
 									</button>
 								</td>
 							</tr>
