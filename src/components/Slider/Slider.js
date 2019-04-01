@@ -1,49 +1,66 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './Slider.css';
 
 function modulo(a, b) {
-  return (a % b + b) % b;
- }
+	return (a % b + b) % b;
+}
 
 class Slider extends Component {
 
-  constructor() {
-    super();
+	static propTypes = {
+		images: PropTypes.arrayOf(PropTypes.string).isRequired
+	};
 
-    this.state = {
-        currentImageIndex: 0,
-    };
+	constructor() {
+		super();
 
-    this.nextSlideHandler = this.nextSlideHandler.bind(this);
-};
+		this.state = {
+			currentImageIndex: 0
+		};
 
-  nextSlideHandler(e) {
-    let newIndex =  this.state.currentImageIndex;
+		this.nextSlideHandler = this.nextSlideHandler.bind(this);
+	}
 
+	nextSlideHandler(e) {
+		const {
+			images
+		} = this.props;
+		const {
+			direction
+		} = e.currentTarget.dataset;
+		const imagesCount = images.length;
 
-    if (e.currentTarget.dataset.direction === 'next') {
-      newIndex = modulo(this.state.currentImageIndex + 1, this.props.images.length);
-  } else {
-      newIndex = modulo(this.state.currentImageIndex - 1, this.props.images.length);
-  }
+		this.setState(({
+			currentImageIndex
+		}) => ({
+			currentImageIndex: direction === 'next'
+				? modulo(currentImageIndex + 1, imagesCount)
+				: modulo(currentImageIndex - 1, imagesCount)
+		}));
+	}
 
-    this.setState({currentImageIndex: newIndex });
-  }
+	render() {
+		const {
+			images
+		} = this.props;
+		const {
+			currentImageIndex
+		} = this.state;
+		const currentImage = images[currentImageIndex];
 
-  render() {
-    return (
-      <div className='slider'>
-        <div className='slide'>
-          <img src={this.props.images[this.state.currentImageIndex]} alt=''/>
-            { this.state.currentImageIndex }
-        </div>
-        <div>
-            <button className='prev' data-direction ='prev' onClick={this.nextSlideHandler}>⟨</button>
-            <button className='next' data-direction ='next' onClick={this.nextSlideHandler}>⟩</button>
-        </div>
-      </div>
-    );
-  }
+		return (
+			<div className='slider'>
+				<div className='slide'>
+					<img src={currentImage} alt=''/>
+				</div>
+				<div>
+					<button className='prev' data-direction='prev' onClick={this.nextSlideHandler}>⟨</button>
+					<button className='next' data-direction='next' onClick={this.nextSlideHandler}>⟩</button>
+				</div>
+			</div>
+		);
+	}
 }
 
 export default Slider;
