@@ -45,7 +45,7 @@ class Calculator extends Component {
 	findSum() {
 		this.setState({
 			// eslint-disable-next-line
-		expression: eval(this.state.expression).toString() 
+			expression: eval(this.state.expression).toString() 
 		});
 	}
 
